@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.geekplus</groupId>
+    <artifactId>optimus-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+    <description>各系统公用的组件库之父</description>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <java.version>1.8</java.version>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+
+        <version.springframework>4.3.14.RELEASE</version.springframework>
+        <version.springdata.jpa>1.11.3.RELEASE</version.springdata.jpa>
+        <version.springboot>1.5.3.RELEASE</version.springboot>
+
+        <version.mybatis>3.4.5</version.mybatis>
+        <version.mybatis.spring>1.3.1</version.mybatis.spring>
+
+        <version.mysql.connector>5.1.45</version.mysql.connector>
+        <version.druid>1.1.8</version.druid>
+
+        <version.hibernate>5.1.8.Final</version.hibernate>
+        <version.hibernate.validator>5.2.4.Final</version.hibernate.validator>
+        <version.hibernate.jpa>1.0.0.Final</version.hibernate.jpa>
+
+        <version.fasterxml.jackson>2.7.4</version.fasterxml.jackson>
+        <version.fastjson>1.2.46</version.fastjson>
+
+        <version.lombok>1.16.20</version.lombok>
+
+        <version.slf4j>1.7.25</version.slf4j>
+        <version.log4j2>2.10.0</version.log4j2>
+
+        <version.servlet>3.1.0</version.servlet>
+        <version.jsp>2.2</version.jsp>
+        <version.jstl>1.2</version.jstl>
+
+        <version.testng>6.14.2</version.testng>
+        <version.powermock>1.7.3</version.powermock>
+        <version.mockito>2.16.0</version.mockito>
+
+        <version.junit>4.12</version.junit>
+
+        <version.shiro>1.3.2</version.shiro>
+        <version.motan>0.2.3</version.motan>
+
+        <version.commons.logging>1.2</version.commons.logging>
+        <version.commons.lang>3.4</version.commons.lang>
+        <version.commons.codec>1.11</version.commons.codec>
+
+        <version.xstream>1.4.8</version.xstream>
+        <version.dom4j>1.6.1</version.dom4j>
+        <version.netty>4.1.4.Final</version.netty>
+        <version.quartz>2.2.2</version.quartz>
+        <version.pinyin4j>2.5.1</version.pinyin4j>
+        <version.guava>22.0</version.guava>
+        <version.nutz>1.r.62</version.nutz>
+        <version.httpclient>4.5.1</version.httpclient>
+        <version.beetl>2.7.23</version.beetl>
+        <version.unbiz.fluent-validator>1.0.9</version.unbiz.fluent-validator>
+        <version.disruptor>3.4.2</version.disruptor>
+        <version.reflections>0.9.11</version.reflections>
+
+        <version.optimus.common>1.0.0-SNAPSHOT</version.optimus.common>
+        <version.optimus.datasource>1.0.0-SNAPSHOT</version.optimus.datasource>
+        <version.optimus.message>1.0.0-SNAPSHOT</version.optimus.message>
+        <version.optimus.auth>1.0.0-SNAPSHOT</version.optimus.auth>
+        <version.optimus.dictionary>1.0.0-SNAPSHOT</version.optimus.dictionary>
+        <version.optimus.sysparam>1.0.0-SNAPSHOT</version.optimus.sysparam>
+        <version.optimus.tool.loghelper>1.0.0-SNAPSHOT</version.optimus.tool.loghelper>
+        <version.optimus.tool.tracehelper>1.0.0-SNAPSHOT</version.optimus.tool.tracehelper>
+        <version.optimus.tool.springmvchelper>1.0.0-SNAPSHOT</version.optimus.tool.springmvchelper>
+        <version.optimus.tool.springboothelper>1.0.0-SNAPSHOT</version.optimus.tool.springboothelper>
+        <version.optimus.tool.i18n>1.0.0-SNAPSHOT</version.optimus.tool.i18n>
+        <optimus.tool.sercurity.version>1.0.0-SNAPSHOT</optimus.tool.sercurity.version>
+        <version.janus.auth.service>1.2.3-SNAPSHOT</version.janus.auth.service>
+        <version.jetcache.anno>2.5.7</version.jetcache.anno>
+        <version.mybaitsplus>3.0.2</version.mybaitsplus>
+        <version.themis.dbencrypt.final>1.0.3-RELEASE</version.themis.dbencrypt.final>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${version.reflections}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${version.disruptor}</version>
+            </dependency>
+
+            <!-- spring -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${version.springframework}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${version.springframework}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${version.springframework}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${version.springframework}</version>
+            </dependency>
+
+            <!-- spring boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${version.springboot}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-tomcat</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-cache</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-log4j2</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>${version.springboot}</version>
+            </dependency>
+
+            <!-- log4j2 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${version.log4j2}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${version.log4j2}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${version.log4j2}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-web</artifactId>
+                <version>${version.log4j2}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${version.lombok}</version>
+            </dependency>
+
+            <!-- database 访问 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${version.mysql.connector}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${version.druid}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${version.mybatis}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${version.mybatis.spring}</version>
+            </dependency>
+
+            <!-- json解析 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.fasterxml.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${version.fasterxml.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${version.fasterxml.jackson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${version.fastjson}</version>
+            </dependency>
+
+            <!-- shiro -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-core</artifactId>
+                <version>${version.shiro}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-web</artifactId>
+                <version>${version.shiro}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${version.shiro}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-ehcache</artifactId>
+                <version>${version.shiro}</version>
+            </dependency>
+
+            <!-- xml解析 -->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${version.xstream}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${version.dom4j}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${version.commons.lang}</version>
+            </dependency>
+
+            <!-- netty -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${version.netty}</version>
+            </dependency>
+
+            <!-- 任务执行器 -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${version.quartz}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.belerweb</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${version.pinyin4j}</version>
+            </dependency>
+
+            <!-- servlet -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${version.servlet}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>${version.jsp}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>jstl</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${version.jstl}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${version.guava}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.nutz</groupId>
+                <artifactId>nutz</artifactId>
+                <version>${version.nutz}</version>
+            </dependency>
+
+            <!-- httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${version.httpclient}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${version.commons.codec}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>beetl</artifactId>
+                <version>${version.beetl}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baidu.unbiz</groupId>
+                <artifactId>fluent-validator</artifactId>
+                <version>${version.unbiz.fluent-validator}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${version.hibernate.validator}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${version.hibernate}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${version.hibernate}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-ehcache</artifactId>
+                <version>${version.hibernate}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>${version.hibernate.jpa}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${version.springdata.jpa}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-core</artifactId>
+                <version>${version.motan}</version>
+
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-transport-netty</artifactId>
+                <version>${version.motan}</version>
+
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-springsupport</artifactId>
+                <version>${version.motan}</version>
+
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-util</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-mybatis</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-xstream</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-jpa</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-netty</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-gboot</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-common-apimsg</artifactId>
+                <version>${version.optimus.common}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-data-datasource</artifactId>
+                <version>${version.optimus.datasource}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-data-message-api</artifactId>
+                <version>${version.optimus.message}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-data-message-core</artifactId>
+                <version>${version.optimus.message}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-data-message-rocketmq</artifactId>
+                <version>${version.optimus.message}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-auth-api</artifactId>
+                <version>${version.optimus.auth}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-auth-service</artifactId>
+                <version>${version.optimus.auth}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-system-dictionary-core</artifactId>
+                <version>${version.optimus.dictionary}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-system-dictionary-web</artifactId>
+                <version>${version.optimus.dictionary}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-system-param-core</artifactId>
+                <version>${version.optimus.sysparam}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-system-param-web</artifactId>
+                <version>${version.optimus.sysparam}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>com.geekplus</groupId>-->
+<!--                <artifactId>janus-auth-service</artifactId>-->
+<!--                <version>1.2.3-SNAPSHOT</version>-->
+<!--            </dependency>-->
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-loghelper-base</artifactId>
+                <version>${version.optimus.tool.loghelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-loghelper-core</artifactId>
+                <version>${version.optimus.tool.loghelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-loghelper-druid</artifactId>
+                <version>${version.optimus.tool.loghelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-loghelper-motan</artifactId>
+                <version>${version.optimus.tool.loghelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-tracehelper-base</artifactId>
+                <version>${version.optimus.tool.tracehelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-tracehelper-motan</artifactId>
+                <version>${version.optimus.tool.tracehelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-springmvchelper-core</artifactId>
+                <version>${version.optimus.tool.springmvchelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-springboothelper-autoupdatefileproperty</artifactId>
+                <version>${version.optimus.tool.springboothelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-i18n-declare</artifactId>
+                <version>${version.optimus.tool.i18n}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-i18n-core</artifactId>
+                <version>${version.optimus.tool.i18n}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-i18n-db</artifactId>
+                <version>${version.optimus.tool.i18n}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>optimus-tool-i18n-web</artifactId>
+                <version>${version.optimus.tool.i18n}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.geekplus</groupId>
+                <artifactId>themis-dbencrypt-final</artifactId>
+                <version>${version.themis.dbencrypt.final}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-anno</artifactId>
+                <version>${version.jetcache.anno}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${version.mybaitsplus}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${version.testng}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng</artifactId>
+            <version>${version.powermock}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-core</artifactId>
+            <version>${version.powermock}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>${version.powermock}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${version.mockito}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${version.commons.logging}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- 内部包发布 -->
+    <distributionManagement>
+<!--        <repository>-->
+<!--            <id>nexus-release</id>-->
+<!--            <url>http://nexus.geekplus.cc:8081/nexus/content/repositories/releases/</url>-->
+<!--        </repository>-->
+
+
+
+<!--        <snapshotRepository>-->
+<!--            <id>nexus-snapshots</id>-->
+<!--            <url>http://nexus.geekplus.cc:8081/nexus/content/repositories/snapshots/</url>-->
+<!--        </snapshotRepository>-->
+
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/geekplus-cn/optimus</url>
+        </repository>
+
+    </distributionManagement>
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>nexus-public</id>-->
+<!--            <name>Public Repository of GeekPlus</name>-->
+<!--            <url>http://nexus.geekplus.cc:8081/nexus/content/groups/public/</url>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>nexus-plugin</id>-->
+<!--            <name>Public PluginRepository of GeekPlus</name>-->
+<!--            <url>http://nexus.geekplus.cc:8081/nexus/content/groups/public/</url>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!--   <modules> -->
+    <!--     <module>optimus-cache</module> -->
+    <!--   </modules> -->
+</project>
