@@ -43,7 +43,7 @@
         <version.lombok>1.16.20</version.lombok>
 
         <version.slf4j>1.7.25</version.slf4j>
-        <version.log4j2>2.10.0</version.log4j2>
+        <version.log4j2>2.13.3</version.log4j2>
 
         <version.servlet>3.1.0</version.servlet>
         <version.jsp>2.2</version.jsp>
