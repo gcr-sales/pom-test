@@ -34,7 +34,7 @@
         <version.druid>1.1.8</version.druid>
 
         <version.hibernate>5.1.8.Final</version.hibernate>
-        <version.hibernate.validator>5.2.4.Final</version.hibernate.validator>
+        <version.hibernate.validator>5.3.6.Final</version.hibernate.validator>
         <version.hibernate.jpa>1.0.0.Final</version.hibernate.jpa>
 
         <version.fasterxml.jackson>2.7.4</version.fasterxml.jackson>
