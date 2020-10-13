@@ -53,7 +53,7 @@
         <version.powermock>1.7.3</version.powermock>
         <version.mockito>2.16.0</version.mockito>
 
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
 
         <version.shiro>1.3.2</version.shiro>
         <version.motan>0.2.3</version.motan>
