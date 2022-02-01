@@ -62,7 +62,7 @@
         <version.commons.lang>3.4</version.commons.lang>
         <version.commons.codec>1.11</version.commons.codec>
 
-        <version.xstream>1.4.8</version.xstream>
+        <version.xstream>1.4.19</version.xstream>
         <version.dom4j>1.6.1</version.dom4j>
         <version.netty>4.1.4.Final</version.netty>
         <version.quartz>2.2.2</version.quartz>
