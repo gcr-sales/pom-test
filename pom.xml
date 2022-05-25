@@ -23,7 +23,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 
-        <version.springframework>4.3.14.RELEASE</version.springframework>
+        <version.springframework>5.2.22.RELEASE</version.springframework>
         <version.springdata.jpa>1.11.3.RELEASE</version.springdata.jpa>
         <version.springboot>1.5.3.RELEASE</version.springboot>
 
