@@ -38,7 +38,7 @@
         <version.hibernate.jpa>1.0.0.Final</version.hibernate.jpa>
 
         <version.fasterxml.jackson>2.7.4</version.fasterxml.jackson>
-        <version.fastjson>1.2.46</version.fastjson>
+        <version.fastjson>1.2.83</version.fastjson>
 
         <version.lombok>1.16.20</version.lombok>
 
