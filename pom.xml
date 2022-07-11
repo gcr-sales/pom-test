@@ -25,7 +25,7 @@
 
         <version.springframework>4.3.14.RELEASE</version.springframework>
         <version.springdata.jpa>1.11.3.RELEASE</version.springdata.jpa>
-        <version.springboot>1.5.3.RELEASE</version.springboot>
+        <version.springboot>2.2.11.RELEASE</version.springboot>
 
         <version.mybatis>3.4.5</version.mybatis>
         <version.mybatis.spring>1.3.1</version.mybatis.spring>
