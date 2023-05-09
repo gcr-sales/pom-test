@@ -49,7 +49,7 @@
         <version.jsp>2.2</version.jsp>
         <version.jstl>1.2</version.jstl>
 
-        <version.testng>6.14.2</version.testng>
+        <version.testng>7.5.1</version.testng>
         <version.powermock>1.7.3</version.powermock>
         <version.mockito>2.16.0</version.mockito>
 
