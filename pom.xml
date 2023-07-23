@@ -64,7 +64,7 @@
 
         <version.xstream>1.4.8</version.xstream>
         <version.dom4j>1.6.1</version.dom4j>
-        <version.netty>4.1.4.Final</version.netty>
+        <version.netty>4.1.42.Final</version.netty>
         <version.quartz>2.2.2</version.quartz>
         <version.pinyin4j>2.5.1</version.pinyin4j>
         <version.guava>22.0</version.guava>
